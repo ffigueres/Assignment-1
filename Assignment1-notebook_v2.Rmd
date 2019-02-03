@@ -1,0 +1,57 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+##Instructions
+1. create a data frame with the column that indicates edible or oisonous and three or four other columns.  
+2. Add meaningful column names
+3. Replace the abbreviations used
+
+Your deliverable is the R code to perform these transformation tasks. 
+
+### Load libaries
+```{r Load Libraries}
+library(data.table)
+#library(dplyr)
+library(tidyr)
+```
+
+### Load data and column labels, then apply labels to data
+```{r Data Import}
+mushdata <- fread("mush.data", header = FALSE)
+```
+
+```{r}
+mushlabels <- as.character(fread("keycolumns.csv", header = FALSE))
+```
+
+```{r}
+names(mushdata) <- mushlabels
+```
+
+
+###Get Key to rename labels
+```{r}
+keydata <- fread("key.csv", header = TRUE)
+```
+
+### Change Values
+
+```{r Solution based on data.table , gives 8127 results BAD}
+test2 <- melt(setDT(mushdata), measure.vars = 1:23)[keydata, on = .(variable = keycat, value = letterkey)][, dcast(.SD, rowid(variable) ~ variable, value.var = 'keylabel')][, variable := NULL][]
+```
+
+#Subset
+
+```{r Subset, works, keeps labels}
+#smaldf <- data.frame(fmushdata$`bruises?`,fmushdata$`cap-shape`)
+subset1 <- subset(test, select=c('gill-size','gill-attachment'))
+```
+
+#Explore data
+
+```{r}
+head(subset1)
+```
+

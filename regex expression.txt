@@ -1,0 +1,13 @@
+Your task is to study the dataset and the associated description of the data (i.e. “data dictionary”).  You may need 
+to look around a bit, but it’s there!  
+
+1. create a data frame with the column that indicates edible or oisonous and three or four other columns.  
+
+2. Add meaningful column names
+
+3. Replace the abbreviations used
+
+Your deliverable is the R code to perform these transformation tasks. 
+
+
+ [1-9][0-9]|[0-9]+\.\s+[a-z,-|-,?]+\:
