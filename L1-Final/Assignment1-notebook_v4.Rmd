@@ -1,0 +1,57 @@
+---
+title: "Lab #1  DATA-607  S2019"
+subtitle: "Fernando Figueres"
+output: html_notebook
+---
+
+##Instructions
+1. create a data frame with the column that indicates edible or oisonous and three or four other columns.  
+2. Add meaningful column names
+3. Replace the abbreviations used
+
+Your deliverable is the R code to perform these transformation tasks. 
+
+### Load libaries
+```{r Load Libraries}
+suppressMessages(library(data.table))
+suppressMessages(library(dplyr))
+suppressMessages(library(tidyr))
+#library(magrittr)
+```
+
+### Load data and column labels, then apply labels to data
+```{r Import data and keys}
+mushdata <- fread("mush.data", header = FALSE)
+keydata <- fread("key.csv", header = TRUE)
+mushlabels <- as.character(fread("keycolumns.csv", header = FALSE))
+```
+
+
+```{r Add column labels to data }
+names(mushdata) <- mushlabels
+```
+
+
+
+### Change Values
+
+```{r 5. Update values with labels}
+#warning: Reloading packages may induce an error when running the following code.
+
+#Based on method posted by Jaap Walhout on Stackoverflow (https://stackoverflow.com/questions/49213691/replacing-data-frame-content-with-values-from-another-table-using-matching-colum?rq=1)
+
+labeleddata <- mushdata %>% gather(keycat, letterkey) %>% left_join(., keydata) %>% select(-letterkey) %>% group_by(keycat) %>% mutate(r = row_number()) %>% spread(keycat, keylabel) %>% select(-r)
+
+```
+
+#Subset
+
+
+```{r 6. Subset, works, keeps labels}
+subset1 <- subset(labeleddata, select=c('edible?','gill-size','gill-attachment'))
+```
+
+```{r}
+head(subset1)
+```
+
