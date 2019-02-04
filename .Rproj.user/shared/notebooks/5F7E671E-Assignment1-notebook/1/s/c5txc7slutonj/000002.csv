@@ -1,0 +1,4 @@
+"0","```r
+library(data.table)
+test <- melt(setDT(mushdata), measure.vars = 1:3)[keydata, on = .(variable = keycat, value = letterkey)][, dcast(.SD, rowid(variable) ~ variable, value.var = 'keylabel')][, variable := NULL][]
+```"

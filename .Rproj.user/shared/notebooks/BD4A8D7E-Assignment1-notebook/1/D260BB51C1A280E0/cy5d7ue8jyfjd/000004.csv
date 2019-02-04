@@ -1,0 +1,2 @@
+"0","#smaldf <- data.frame(fmushdata$`bruises?`,fmushdata$`cap-shape`)"
+"0","subset1 <- subset(labeleddata, select=c('gill-size','gill-attachment'))"

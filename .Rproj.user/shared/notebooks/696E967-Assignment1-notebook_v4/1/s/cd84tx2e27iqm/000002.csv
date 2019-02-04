@@ -1,0 +1,1 @@
+"0","mushsubset1 <- subset(mushfinal, select=c('edible?','gill-attachment','gill-spacing','gill-size','gill-color'))"

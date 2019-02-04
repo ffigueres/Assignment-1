@@ -1,0 +1,4 @@
+"0","```r
+#smaldf <- data.frame(fmushdata$`bruises?`,fmushdata$`cap-shape`)
+subset1 <- subset(test, select=c('gill-size','gill-attachment'))
+```"

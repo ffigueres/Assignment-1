@@ -1,0 +1,21 @@
+[0m[0K]0;:/c/Users/ffigu/Desktop/CUNY/DATA-607/Assignment 1[?25l
+[0;32mffigu@Spectre [0;35m [0;33m~/Desktop/CUNY/DATA-607/Assignment 1[0m[0K
+$[0K[3G[?25h[?25l$ mushdata %>% gather(keycat, letterkey) %>% left_join(., key) %>% select(-letterkey) %>% group_by(keycat) %>% mu[0K[3G[?25h[?25l
+tate(r = row_number()) %>% spread(keycat, keylabel) %>% select(-r)[0K
+bash: syntax error near unexpected token `('[0K
+[0K[?25h[?25l
+[0;32mffigu@Spectre [0;35m [0;33m~/Desktop/CUNY/DATA-607/Assignment 1[0m[0K
+$[0K[3G[?25h[?25l$ ```[0K
+>[0K[3G[?25h[?25l> melt(setDT(mushdata), measure.vars = 1:23)[keydata, on = .(variable = keycat, value = letterkey)][, dcast(.SD,[0K
+rowid(variable) ~ variable, value.var = 'keylabel')][, variable := NULL][][0K
+>[0K[3G[?25h[?25l> m[0K[?25hu[0Ks[0Kh[0Kd[0Ka[0Kt[0Ka[0K@[0K[?25l> mushdata[0K[?25h$[0Kc[0Ka[0Kp[0K-[0Kc[0Ko[0Kl[0Ko[0Kr[0K[?25l
+>[0K[3G[?25h[?25l> melt(setDT(mushdata), measure.vars = 1:4)[keydata, on = .(variable = keycat, value = letterkey)][, dcast(.SD, r[0K
+owid(variable) ~ variable, value.var = 'keylabel')][, variable := NULL][][0K
+>[0K[3G[?25h[?25l> melt(setDT(mushdata), measure.vars = 1:4)[keydata, on = .(variable = keycat, value = letterkey)][, dcast(.SD, r[0K
+owid(variable) ~ variable, value.var = 'keylabel')][, variable := NULL][][0K
+>[0K[3G[?25h[?25l> melt(setDT(mushdata), measure.vars = 1:3)[keydata, on = .(variable = keycat, value = letterkey)][, dcast(.SD, r[0K
+owid(variable) ~ variable, value.var = 'keylabel')][, variable := NULL][][0K
+>[0K[3G[?25h[?25l> df2 <- data.frame(AB = c("a", "b", "c"),[0K
+>[0K[3G[?25h[?25l> df2 %>% gather(Group, Name) %>% left_join(., df1) %>% select(-Name) %>% group_by(Group) %>% mutate(r = row_numb[0K
+er()) %>% spread(Group, Vote) %>% select(-r)[0K
+>[0K[3G[?25h

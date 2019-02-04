@@ -1,0 +1,5 @@
+"0","#warning: Reloading packages may induce an error when running the following code."
+"0","#Based on method posted by Jaap Walhout on Stackoverflow (https://stackoverflow.com/questions/49213691/replacing-data-frame-content-with-values-from-another-table-using-matching-colum?rq=1)"
+"0","labeleddata <- mushdata %>% gather(keycat, letterkey) %>% left_join(., keydata) %>% select(-letterkey) %>% group_by(keycat) %>% mutate(r = row_number()) %>% spread(keycat, keylabel) %>% select(-r)"
+"2","Joining, by = c(""keycat"", ""letterkey"")
+"

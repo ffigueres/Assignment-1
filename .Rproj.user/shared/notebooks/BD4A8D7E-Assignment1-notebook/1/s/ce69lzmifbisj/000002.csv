@@ -1,0 +1,6 @@
+"0","```r
+#df2 %>% gather(Group, Name) %>% left_join(., df1) %>% select(-Name) %>% group_by(Group) %>% mutate(r = row_number()) %>% spread(Group, Vote) %>% select(-r)
+
+mushdata %>% gather(keycat, letterkey) %>% left_join(., keydata) %>% select(-letterkey) %>% group_by(keycat) %>% mutate(r = row_number()) %>% spread(keycat, keylabel) %>% select(-r)
+
+```"

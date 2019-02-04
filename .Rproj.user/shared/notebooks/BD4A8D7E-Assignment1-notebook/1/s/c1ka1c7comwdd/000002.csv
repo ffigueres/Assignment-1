@@ -1,0 +1,6 @@
+"0","```r
+mushdata %>% gather(keycat, letterkey) %>% left_join(., key) %>% select(-letterkey) %>% group_by(keycat) %>% mutate(r = row_number()) %>% spread(keycat, keylabel) %>% select(-r)
+```"
+"1","Error in check_valid_names(tbl_vars(x)) : 
+  object '_dplyr_check_valid_names' not found
+"

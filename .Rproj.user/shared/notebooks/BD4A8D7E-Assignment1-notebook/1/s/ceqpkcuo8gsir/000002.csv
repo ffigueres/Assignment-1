@@ -1,0 +1,13 @@
+"0","```r
+library(data.table)
+library(dplyr)
+library(tidyr)
+library(magrittr)
+```"
+"1","
+Attaching package: ã¤¼ã¸±magrittrã¤¼ã¸²
+
+The following object is masked from ã¤¼ã¸±package:tidyrã¤¼ã¸²:
+
+    extract
+"

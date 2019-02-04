@@ -1,0 +1,1 @@
+"0","mushdata <- fread(""mush.data"", header = FALSE)"

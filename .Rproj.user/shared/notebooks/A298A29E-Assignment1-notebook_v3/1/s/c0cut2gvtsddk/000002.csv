@@ -1,0 +1,3 @@
+"0","mushdata <- fread(""mush.data"", header = FALSE)"
+"0","keydata <- fread(""key.csv"", header = TRUE)"
+"0","mushlabels <- as.character(fread(""keycolumns.csv"", header = FALSE))"
